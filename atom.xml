@@ -4,7 +4,7 @@
   <title><![CDATA[My Octopress Blog]]></title>
   <link href="http://vuvanly.github.io/atom.xml" rel="self"/>
   <link href="http://vuvanly.github.io/"/>
-  <updated>2014-06-25T22:41:56+07:00</updated>
+  <updated>2014-06-25T22:47:07+07:00</updated>
   <id>http://vuvanly.github.io/</id>
   <author>
     <name><![CDATA[Your Name]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[My Second Post]]></title>
+    <link href="http://vuvanly.github.io/blog/2014/06/25/my-second-post/"/>
+    <updated>2014-06-25T22:46:44+07:00</updated>
+    <id>http://vuvanly.github.io/blog/2014/06/25/my-second-post</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My First Blog With Octopress]]></title>
