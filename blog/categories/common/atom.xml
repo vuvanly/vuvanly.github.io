@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Common | My Octopress Blog]]></title>
+  <title><![CDATA[Category: Common | Vũ Văn Lý - MySQUAR]]></title>
   <link href="http://vuvanly.github.io/blog/categories/common/atom.xml" rel="self"/>
   <link href="http://vuvanly.github.io/"/>
-  <updated>2014-06-25T22:47:07+07:00</updated>
+  <updated>2014-06-25T23:10:37+07:00</updated>
   <id>http://vuvanly.github.io/</id>
   <author>
-    <name><![CDATA[Your Name]]></name>
+    <name><![CDATA[Vũ Văn Lý]]></name>
     
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
