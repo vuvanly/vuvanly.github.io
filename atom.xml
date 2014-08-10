@@ -4,7 +4,7 @@
   <title><![CDATA[Vũ Văn Lý - MySQUAR]]></title>
   <link href="http://vuvanly.github.io/atom.xml" rel="self"/>
   <link href="http://vuvanly.github.io/"/>
-  <updated>2014-08-10T12:16:03+07:00</updated>
+  <updated>2014-08-10T15:51:52+07:00</updated>
   <id>http://vuvanly.github.io/</id>
   <author>
     <name><![CDATA[Vũ Văn Lý]]></name>
@@ -14,11 +14,101 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Bad Practices vs Best Practices in Ruby on Rails]]></title>
-    <link href="http://vuvanly.github.io/blog/2014/08/10/bad-practices-vs-best-practices-in-ruby-on-rails/"/>
+    <title type="html"><![CDATA[Yield and Block in Ruby]]></title>
+    <link href="http://vuvanly.github.io/blog/2014/08/10/yield-block-in-ruby/"/>
     <updated>2014-08-10T11:02:12+07:00</updated>
-    <id>http://vuvanly.github.io/blog/2014/08/10/bad-practices-vs-best-practices-in-ruby-on-rails</id>
-    <content type="html"><![CDATA[
+    <id>http://vuvanly.github.io/blog/2014/08/10/yield-block-in-ruby</id>
+    <content type="html"><![CDATA[<p>Hi all, in this post, i will research something with <code>yield</code> and <code>block</code> in ruby</p>
+
+<h1>Yield</h1>
+
+<h3>Basic</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
+</span><span class='line'>  <span class="k">yield</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="nb">p</span>  <span class="s2">&quot;yield&quot;</span> <span class="p">}</span>
+</span><span class='line'><span class="c1"># =&gt; test</span>
+</span><span class='line'><span class="c1"># =&gt; yield</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>With variable</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
+</span><span class='line'>  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="k">yield</span> <span class="n">x</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">p</span>  <span class="s2">&quot;yield </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># =&gt; test</span>
+</span><span class='line'><span class="c1"># =&gt; yield 2</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h1>Block</h1>
+
+<h3>Basic</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">code</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
+</span><span class='line'>  <span class="n">code</span><span class="o">.</span><span class="n">call</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="nb">p</span> <span class="s2">&quot;block call&quot;</span><span class="p">}</span>
+</span><span class='line'><span class="c1"># =&gt; test</span>
+</span><span class='line'><span class="c1"># =&gt; block call</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h3>With variable</h3>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">code</span><span class="p">)</span>
+</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
+</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span class='line'>  <span class="n">code</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">p</span> <span class="s2">&quot;block call </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="c1"># =&gt; test</span>
+</span><span class='line'><span class="c1"># =&gt; block call 2</span>
+</span></code></pre></td></tr></table></div></figure>
+
 ]]></content>
   </entry>
   
