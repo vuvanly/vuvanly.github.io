@@ -4,7 +4,7 @@
   <title><![CDATA[Vũ Văn Lý - MySQUAR]]></title>
   <link href="http://vuvanly.github.io/atom.xml" rel="self"/>
   <link href="http://vuvanly.github.io/"/>
-  <updated>2014-08-10T10:41:37+07:00</updated>
+  <updated>2014-08-10T11:17:20+07:00</updated>
   <id>http://vuvanly.github.io/</id>
   <author>
     <name><![CDATA[Vũ Văn Lý]]></name>
@@ -12,6 +12,15 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Bad Practices vs Best Practices in Ruby on Rails]]></title>
+    <link href="http://vuvanly.github.io/blog/2014/08/10/bad-practices-vs-best-practices-in-ruby-on-rails/"/>
+    <updated>2014-08-10T11:02:12+07:00</updated>
+    <id>http://vuvanly.github.io/blog/2014/08/10/bad-practices-vs-best-practices-in-ruby-on-rails</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[My Second Post]]></title>

@@ -1,0 +1,9 @@
+body{
+  max-width: none;
+}
+body > header{
+  background: #fff;
+}
+body > header > hgroup > h1 > a {
+  color: #000;
+}
