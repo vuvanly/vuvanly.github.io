@@ -1,0 +1,16 @@
+body{
+  max-width: none;
+}
+body > header {
+  background: #fff;
+  color: #000;
+}
+body>header h1 a {
+  color: #000;
+}
+
+body footer{
+  margin-bottom: 0;
+  border-radius: 0;
+  -webkit-border-radius: 0;
+}
