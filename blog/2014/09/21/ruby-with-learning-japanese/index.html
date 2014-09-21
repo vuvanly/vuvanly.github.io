@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Vũ Văn Lý - MySQUAR</title>
+  <title>Ruby With Learning Japanese - Vũ Văn Lý - MySQUAR</title>
   <meta name="author" content="Vũ Văn Lý">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://vuvanly.github.io">
+  <link rel="canonical" href="http://vuvanly.github.io/blog/2014/09/21/ruby-with-learning-japanese">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/stylesheets/css.css" media="screen, projection" rel="stylesheet" type="text/css">
@@ -65,15 +65,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2014/09/21/ruby-with-learning-japanese/">Ruby With Learning Japanese</a></h1>
+      <h1 class="entry-title">Ruby With Learning Japanese</h1>
     
     
       <p class="meta">
@@ -96,7 +93,7 @@
   </header>
 
 
-  <div class="entry-content"><p>I started learn Japanese 3 years ago. It last 3 months. No i want to learn it again, so i review <code>Hiragana</code> and <code>Katakana</code>. Today i start with <code>Hiragana</code>. I want to find a way can help me with this thing, and beside that, i am a developer, so i want to use my knowledge in this major apply to learn Japanese.</p>
+<div class="entry-content"><p>I started learn Japanese 3 years ago. It last 3 months. No i want to learn it again, so i review <code>Hiragana</code> and <code>Katakana</code>. Today i start with <code>Hiragana</code>. I want to find a way can help me with this thing, and beside that, i am a developer, so i want to use my knowledge in this major apply to learn Japanese.</p>
 
 <p>I created 2 files. One is <code>hiragana.rb</code> that shows <code>romanji</code> character and i will write down <code>Hiragana</code> character. The other is <code>hiragana_reading.rb</code> that shows <code>Hiragana</code> character and i will read it out loud.</p>
 
@@ -259,22 +256,16 @@
 To Write <code>Hiragana</code> character, in MacOS, you have to go to <code>System Preferences</code> &ndash;> <code>Keyboard</code> &ndash;> at Tab <code>Input Sources</code>, you add <code>Japanese</code> keyboard. That&rsquo;s it.
 For others OS, you do someway to enable Japanese Keyboard.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2014/08/10/yield-block-in-ruby/">Yield and Block in Ruby</a></h1>
-    
-    
-      <p class="meta">
-        
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Vũ Văn Lý</span></span>
+
+      
 
 
 
@@ -286,117 +277,34 @@ For others OS, you do someway to enable Japanese Keyboard.</p>
   
 
 
-<time datetime="2014-08-10T11:02:12+07:00" pubdate data-updated="true">Aug 10<sup>th</sup>, 2014</time>
-        
-      </p>
+<time datetime="2014-09-21T16:04:49+07:00" pubdate data-updated="true">Sep 21<sup>st</sup>, 2014</time>
+      
+
+
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://vuvanly.github.io/blog/2014/09/21/ruby-with-learning-japanese/" data-via="" data-counturl="http://vuvanly.github.io/blog/2014/09/21/ruby-with-learning-japanese/" >Tweet</a>
+  
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
-
-  <div class="entry-content"><p>Hi all, in this post, i will research something with <code>yield</code> and <code>block</code> in ruby</p>
-
-<h1>Yield</h1>
-
-<h3>Basic</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
-</span><span class='line'>  <span class="k">yield</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="nb">p</span>  <span class="s2">&quot;yield&quot;</span> <span class="p">}</span>
-</span><span class='line'><span class="c1"># =&gt; test</span>
-</span><span class='line'><span class="c1"># =&gt; yield</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>With variable</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
-</span><span class='line'>  <span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="k">yield</span> <span class="n">x</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="o">|</span><span class="n">x</span><span class="o">|</span> <span class="nb">p</span>  <span class="s2">&quot;yield </span><span class="si">#{</span><span class="n">x</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># =&gt; test</span>
-</span><span class='line'><span class="c1"># =&gt; yield 2</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h1>Block</h1>
-
-<h3>Basic</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">code</span><span class="p">)</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
-</span><span class='line'>  <span class="n">code</span><span class="o">.</span><span class="n">call</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="nb">p</span> <span class="s2">&quot;block call&quot;</span><span class="p">}</span>
-</span><span class='line'><span class="c1"># =&gt; test</span>
-</span><span class='line'><span class="c1"># =&gt; block call</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<h3>With variable</h3>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="o">&amp;</span><span class="n">code</span><span class="p">)</span>
-</span><span class='line'>  <span class="nb">p</span> <span class="s2">&quot;test&quot;</span>
-</span><span class='line'>  <span class="n">n</span> <span class="o">=</span> <span class="mi">2</span>
-</span><span class='line'>  <span class="n">code</span><span class="o">.</span><span class="n">call</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-</span><span class='line'><span class="k">end</span>
-</span><span class='line'><span class="nb">test</span> <span class="p">{</span> <span class="o">|</span><span class="n">n</span><span class="o">|</span> <span class="nb">p</span> <span class="s2">&quot;block call </span><span class="si">#{</span><span class="n">n</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1"># =&gt; test</span>
-</span><span class='line'><span class="c1"># =&gt; block call 2</span>
-</span></code></pre></td></tr></table></div></figure>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2014/08/10/yield-block-in-ruby/" title="Previous Post: Yield and Block in Ruby">&laquo; Yield and Block in Ruby</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -420,6 +328,7 @@ For others OS, you do someway to enable Japanese Keyboard.</p>
 
   
 </aside>
+
 
     </div>
   </div>

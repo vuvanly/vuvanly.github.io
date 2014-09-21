@@ -4,7 +4,7 @@
   <title><![CDATA[Vũ Văn Lý - MySQUAR]]></title>
   <link href="http://vuvanly.github.io/atom.xml" rel="self"/>
   <link href="http://vuvanly.github.io/"/>
-  <updated>2014-08-10T17:24:42+07:00</updated>
+  <updated>2014-09-21T16:25:02+07:00</updated>
   <id>http://vuvanly.github.io/</id>
   <author>
     <name><![CDATA[Vũ Văn Lý]]></name>
@@ -12,6 +12,176 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Ruby With Learning Japanese]]></title>
+    <link href="http://vuvanly.github.io/blog/2014/09/21/ruby-with-learning-japanese/"/>
+    <updated>2014-09-21T16:04:49+07:00</updated>
+    <id>http://vuvanly.github.io/blog/2014/09/21/ruby-with-learning-japanese</id>
+    <content type="html"><![CDATA[<p>I started learn Japanese 3 years ago. It last 3 months. No i want to learn it again, so i review <code>Hiragana</code> and <code>Katakana</code>. Today i start with <code>Hiragana</code>. I want to find a way can help me with this thing, and beside that, i am a developer, so i want to use my knowledge in this major apply to learn Japanese.</p>
+
+<p>I created 2 files. One is <code>hiragana.rb</code> that shows <code>romanji</code> character and i will write down <code>Hiragana</code> character. The other is <code>hiragana_reading.rb</code> that shows <code>Hiragana</code> character and i will read it out loud.</p>
+
+<h1>Writing</h1>
+
+<figure class='code'><figcaption><span>hiragana.rb</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">TIME_SLEEP</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span class='line'><span class="no">MAX_EXIST</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span class='line'><span class="n">hiragana</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;i&#39;</span><span class="p">,</span> <span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="s1">&#39;e&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ka&#39;</span><span class="p">,</span> <span class="s1">&#39;ki&#39;</span><span class="p">,</span> <span class="s1">&#39;ku&#39;</span><span class="p">,</span> <span class="s1">&#39;ke&#39;</span><span class="p">,</span> <span class="s1">&#39;ko&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;sa&#39;</span><span class="p">,</span> <span class="s1">&#39;si&#39;</span><span class="p">,</span> <span class="s1">&#39;su&#39;</span><span class="p">,</span> <span class="s1">&#39;se&#39;</span><span class="p">,</span> <span class="s1">&#39;so&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ta&#39;</span><span class="p">,</span> <span class="s1">&#39;chi&#39;</span><span class="p">,</span> <span class="s1">&#39;tsu&#39;</span><span class="p">,</span> <span class="s1">&#39;te&#39;</span><span class="p">,</span> <span class="s1">&#39;to&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;na&#39;</span><span class="p">,</span> <span class="s1">&#39;ni&#39;</span><span class="p">,</span> <span class="s1">&#39;nu&#39;</span><span class="p">,</span> <span class="s1">&#39;ne&#39;</span><span class="p">,</span> <span class="s1">&#39;no&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ha&#39;</span><span class="p">,</span> <span class="s1">&#39;hi&#39;</span><span class="p">,</span> <span class="s1">&#39;fu&#39;</span><span class="p">,</span> <span class="s1">&#39;he&#39;</span><span class="p">,</span> <span class="s1">&#39;ho&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ma&#39;</span><span class="p">,</span> <span class="s1">&#39;mi&#39;</span><span class="p">,</span> <span class="s1">&#39;mu&#39;</span><span class="p">,</span> <span class="s1">&#39;me&#39;</span><span class="p">,</span> <span class="s1">&#39;mo&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ya&#39;</span><span class="p">,</span> <span class="s1">&#39;yu&#39;</span><span class="p">,</span> <span class="s1">&#39;yo&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ra&#39;</span><span class="p">,</span> <span class="s1">&#39;ri&#39;</span><span class="p">,</span> <span class="s1">&#39;ru&#39;</span><span class="p">,</span> <span class="s1">&#39;re&#39;</span><span class="p">,</span> <span class="s1">&#39;ro&#39;</span><span class="p">,</span> <span class="s1">&#39;wa&#39;</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="s1">&#39;n&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="n">mark</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">hiragana</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">h</span><span class="o">|</span> <span class="n">mark</span><span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">}</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">hiragana</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">while</span> <span class="kp">true</span>
+</span><span class='line'>      <span class="n">a</span> <span class="o">=</span> <span class="n">hiragana</span><span class="o">.</span><span class="n">sample</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">mark</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">&lt;</span> <span class="no">MAX_EXIST</span><span class="p">)</span>
+</span><span class='line'>        <span class="nb">sleep</span><span class="p">(</span><span class="no">TIME_SLEEP</span><span class="p">)</span>
+</span><span class='line'>        <span class="nb">p</span> <span class="n">a</span>
+</span><span class='line'>        <span class="n">mark</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[H</span><span class="se">\e</span><span class="s2">[2J&quot;</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>        <span class="n">hiragana</span> <span class="o">-=</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
+</span><span class='line'>        <span class="c1"># Play with the remaining characters</span>
+</span><span class='line'>        <span class="n">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;Finish. You&#39;ve done a greate job!&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot;Let play with Hiragana!&quot;</span>
+</span><span class='line'><span class="n">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Go to <code>Terminal</code> cd to the folder contains that file. Run <code>ruby hiragana.rb</code> and see what happen.</p>
+
+<h1>Reading</h1>
+
+<figure class='code'><figcaption><span>hiragana_reading.rb</span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="no">TIME_SLEEP</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span class='line'><span class="no">MAX_EXIST</span> <span class="o">=</span> <span class="mi">5</span>
+</span><span class='line'><span class="n">hiragana</span> <span class="o">=</span> <span class="o">[</span><span class="s1">&#39;あ&#39;</span><span class="p">,</span> <span class="s1">&#39;い&#39;</span><span class="p">,</span> <span class="s1">&#39;う&#39;</span><span class="p">,</span> <span class="s1">&#39;え&#39;</span><span class="p">,</span> <span class="s1">&#39;お&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;か&#39;</span><span class="p">,</span> <span class="s1">&#39;き&#39;</span><span class="p">,</span> <span class="s1">&#39;く&#39;</span><span class="p">,</span> <span class="s1">&#39;け&#39;</span><span class="p">,</span> <span class="s1">&#39;こ&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;さ&#39;</span><span class="p">,</span> <span class="s1">&#39;し&#39;</span><span class="p">,</span> <span class="s1">&#39;す&#39;</span><span class="p">,</span> <span class="s1">&#39;せ&#39;</span><span class="p">,</span> <span class="s1">&#39;そ&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;た&#39;</span><span class="p">,</span> <span class="s1">&#39;ち&#39;</span><span class="p">,</span> <span class="s1">&#39;つ&#39;</span><span class="p">,</span> <span class="s1">&#39;て&#39;</span><span class="p">,</span> <span class="s1">&#39;と&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;な&#39;</span><span class="p">,</span> <span class="s1">&#39;に&#39;</span><span class="p">,</span> <span class="s1">&#39;ぬ&#39;</span><span class="p">,</span> <span class="s1">&#39;ね&#39;</span><span class="p">,</span> <span class="s1">&#39;の&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;は&#39;</span><span class="p">,</span> <span class="s1">&#39;ひ&#39;</span><span class="p">,</span> <span class="s1">&#39;ふ&#39;</span><span class="p">,</span> <span class="s1">&#39;へ&#39;</span><span class="p">,</span> <span class="s1">&#39;ほ&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ま&#39;</span><span class="p">,</span> <span class="s1">&#39;み&#39;</span><span class="p">,</span> <span class="s1">&#39;む&#39;</span><span class="p">,</span> <span class="s1">&#39;め&#39;</span><span class="p">,</span> <span class="s1">&#39;も&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;や&#39;</span><span class="p">,</span> <span class="s1">&#39;ゆ&#39;</span><span class="p">,</span> <span class="s1">&#39;よ&#39;</span><span class="p">,</span>
+</span><span class='line'>            <span class="s1">&#39;ら&#39;</span><span class="p">,</span> <span class="s1">&#39;り&#39;</span><span class="p">,</span> <span class="s1">&#39;る&#39;</span><span class="p">,</span> <span class="s1">&#39;れ&#39;</span><span class="p">,</span> <span class="s1">&#39;ろ&#39;</span><span class="p">,</span> <span class="s1">&#39;わ&#39;</span><span class="p">,</span> <span class="s1">&#39;を&#39;</span><span class="p">,</span> <span class="s1">&#39;ん&#39;</span><span class="o">]</span>
+</span><span class='line'><span class="n">mark</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span class='line'><span class="n">hiragana</span><span class="o">.</span><span class="n">each</span> <span class="p">{</span><span class="o">|</span><span class="n">h</span><span class="o">|</span> <span class="n">mark</span><span class="o">[</span><span class="n">h</span><span class="o">]</span> <span class="o">=</span> <span class="mi">0</span><span class="p">}</span>
+</span><span class='line'><span class="k">def</span> <span class="nf">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">if</span> <span class="p">(</span><span class="n">hiragana</span><span class="o">.</span><span class="n">size</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>    <span class="k">while</span> <span class="kp">true</span>
+</span><span class='line'>      <span class="n">a</span> <span class="o">=</span> <span class="n">hiragana</span><span class="o">.</span><span class="n">sample</span>
+</span><span class='line'>      <span class="k">if</span> <span class="p">(</span><span class="n">mark</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">&lt;</span> <span class="no">MAX_EXIST</span><span class="p">)</span>
+</span><span class='line'>        <span class="nb">p</span> <span class="n">a</span>
+</span><span class='line'>        <span class="n">mark</span><span class="o">[</span><span class="n">a</span><span class="o">]</span> <span class="o">+=</span> <span class="mi">1</span>
+</span><span class='line'>        <span class="nb">sleep</span><span class="p">(</span><span class="no">TIME_SLEEP</span><span class="p">)</span>
+</span><span class='line'>        <span class="nb">puts</span> <span class="s2">&quot;</span><span class="se">\e</span><span class="s2">[H</span><span class="se">\e</span><span class="s2">[2J&quot;</span>
+</span><span class='line'>      <span class="k">else</span>
+</span><span class='line'>        <span class="n">hiragana</span> <span class="o">-=</span> <span class="o">[</span><span class="n">a</span><span class="o">]</span>
+</span><span class='line'>        <span class="c1"># Play with the remaining characters</span>
+</span><span class='line'>        <span class="n">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span><span class='line'>      <span class="k">end</span>
+</span><span class='line'>    <span class="k">end</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>    <span class="nb">p</span> <span class="s2">&quot;Finish. You&#39;ve done a greate job!&quot;</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span><span class='line'><span class="nb">p</span> <span class="s2">&quot;Let play with Hiragana!&quot;</span>
+</span><span class='line'><span class="n">display_hiragana</span><span class="p">(</span><span class="n">hiragana</span><span class="p">,</span> <span class="n">mark</span><span class="p">)</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>You can go to terminal to increase the font size of <code>Hiragana</code> characters.
+* MacOS: Terminal &ndash;> Preferences &ndash;> Profile &ndash;> Text, at Non-ASCII Font, you choose the bigger font: maybe 24 or 30px.</p>
+
+<p>After that, you go to <code>Terminal</code> cd to the folder contains that file. Run <code>ruby hiragana_reading.rb</code> and see what happen.</p>
+
+<p>**Notes:
+To Write <code>Hiragana</code> character, in MacOS, you have to go to <code>System Preferences</code> &ndash;> <code>Keyboard</code> &ndash;> at Tab <code>Input Sources</code>, you add <code>Japanese</code> keyboard. That&rsquo;s it.
+For others OS, you do someway to enable Japanese Keyboard.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Yield and Block in Ruby]]></title>
